@@ -1,0 +1,6 @@
+framework module MXScroll {
+  umbrella header "MXScroll-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import RxMoya
 import Moya
 import RxSwift
 

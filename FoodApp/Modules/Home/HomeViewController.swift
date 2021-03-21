@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MXScroll
 
 protocol HomeViewDelegate: class{
     func showError()
@@ -18,6 +19,7 @@ class HomeViewController: UIViewController, HomeViewDelegate {
     //MARK:- Private Properties
     private let presenter: HomePresenter
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     //MARK: - Init
     
@@ -65,6 +67,15 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
         }
         return UITableViewCell()
         
+    }
+}
+
+extension HomeViewController : MXViewControllerViewSource{
+    func headerViewForMixObserveContentOffsetChange() -> UIView? {
+        return
+    }
+    func viewForMixToObserveContentOffsetChange() -> UIView {
+        return scrollView
     }
 }
 

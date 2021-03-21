@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MXScroll
 
 final class AppNavigator {
     //MARK: - Private Properties
@@ -26,6 +27,7 @@ final class AppNavigator {
         
         let homePresenter = HomePresenter(interactor: HomeInteractor(service: ProductService()),
                                       router: HomeRouter())
+        let vc = MXViewController<>
         let viewController = UIStoryboard.home.instantiateInitialViewController{
            HomeViewController(coder: $0, presenter: homePresenter)
         }
